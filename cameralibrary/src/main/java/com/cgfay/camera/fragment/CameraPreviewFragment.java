@@ -201,10 +201,8 @@ public class CameraPreviewFragment extends Fragment implements View.OnClickListe
         mPreviewLayout.addView(mCameraTextureView);
 
         // 添加圆角显示
-        if (Build.VERSION.SDK_INT >= 21) {
-            mCameraTextureView.setOutlineProvider(new RoundOutlineProvider(getResources().getDimension(R.dimen.dp7)));
-            mCameraTextureView.setClipToOutline(true);
-        }
+        mCameraTextureView.setOutlineProvider(new RoundOutlineProvider(getResources().getDimension(com.cgfay.utilslibrary.R.dimen.dp7)));
+        mCameraTextureView.setClipToOutline(true);
         mPreviewLayout.setOnMeasureListener(new PreviewMeasureListener(mPreviewLayout));
         mProgressView = mContentView.findViewById(R.id.record_progress);
         mCountDownView = mContentView.findViewById(R.id.count_down_view);
@@ -460,7 +458,7 @@ public class CameraPreviewFragment extends Fragment implements View.OnClickListe
     private void closeCamera() {
         if (mActivity != null) {
             mActivity.finish();
-            mActivity.overridePendingTransition(0, R.anim.anim_slide_down);
+            mActivity.overridePendingTransition(0, com.cgfay.utilslibrary.R.anim.anim_slide_down);
         }
     }
 
@@ -1054,13 +1052,13 @@ public class CameraPreviewFragment extends Fragment implements View.OnClickListe
      */
     private void deleteRecordedVideo() {
         dismissDialog();
-        mDialog = DialogBuilder.from(mActivity, R.layout.dialog_two_button)
-                .setText(R.id.tv_dialog_title, R.string.delete_last_video_tips)
-                .setText(R.id.btn_dialog_cancel, R.string.btn_dialog_cancel)
-                .setDismissOnClick(R.id.btn_dialog_cancel, true)
-                .setText(R.id.btn_dialog_ok, R.string.btn_delete)
-                .setDismissOnClick(R.id.btn_dialog_ok, true)
-                .setOnClickListener(R.id.btn_dialog_ok, v -> {
+        mDialog = DialogBuilder.from(mActivity, com.cgfay.utilslibrary.R.layout.dialog_two_button)
+                .setText(com.cgfay.utilslibrary.R.id.tv_dialog_title, R.string.delete_last_video_tips)
+                .setText(com.cgfay.utilslibrary.R.id.btn_dialog_cancel, com.cgfay.utilslibrary.R.string.btn_dialog_cancel)
+                .setDismissOnClick(com.cgfay.utilslibrary.R.id.btn_dialog_cancel, true)
+                .setText(com.cgfay.utilslibrary.R.id.btn_dialog_ok, R.string.btn_delete)
+                .setDismissOnClick(com.cgfay.utilslibrary.R.id.btn_dialog_ok, true)
+                .setOnClickListener(com.cgfay.utilslibrary.R.id.btn_dialog_ok, v -> {
                     mPreviewPresenter.deleteLastVideo();
                 })
                 .show();
@@ -1137,19 +1135,19 @@ public class CameraPreviewFragment extends Fragment implements View.OnClickListe
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == PermissionUtils.REQUEST_CAMERA_PERMISSION) {
             if (grantResults.length != 1 || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-                PermissionErrorDialogFragment.newInstance(getString(R.string.request_camera_permission), PermissionUtils.REQUEST_CAMERA_PERMISSION, true)
+                PermissionErrorDialogFragment.newInstance(getString(com.cgfay.utilslibrary.R.string.request_camera_permission), PermissionUtils.REQUEST_CAMERA_PERMISSION, true)
                         .show(getChildFragmentManager(), FRAGMENT_DIALOG);
             } else {
                 initView(mContentView);
             }
         } else if (requestCode == PermissionUtils.REQUEST_STORAGE_PERMISSION) {
             if (grantResults.length != 1 || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-                PermissionErrorDialogFragment.newInstance(getString(R.string.request_storage_permission), PermissionUtils.REQUEST_STORAGE_PERMISSION)
+                PermissionErrorDialogFragment.newInstance(getString(com.cgfay.utilslibrary.R.string.request_storage_permission), PermissionUtils.REQUEST_STORAGE_PERMISSION)
                         .show(getChildFragmentManager(), FRAGMENT_DIALOG);
             }
         } else if (requestCode == PermissionUtils.REQUEST_SOUND_PERMISSION) {
             if (grantResults.length != 1 || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-                PermissionErrorDialogFragment.newInstance(getString(R.string.request_sound_permission), PermissionUtils.REQUEST_SOUND_PERMISSION)
+                PermissionErrorDialogFragment.newInstance(getString(com.cgfay.utilslibrary.R.string.request_sound_permission), PermissionUtils.REQUEST_SOUND_PERMISSION)
                         .show(getChildFragmentManager(), FRAGMENT_DIALOG);
             }
         } else {
@@ -1196,7 +1194,7 @@ public class CameraPreviewFragment extends Fragment implements View.OnClickListe
             if (mBtnMedia != null) {
                 new CameraMediaLoader().loadThumbnail(mActivity, mBtnMedia, albumData.getCoverUri(),
                         R.drawable.ic_camera_thumbnail_placeholder,
-                        (int)getResources().getDimension(R.dimen.dp4));
+                        (int)getResources().getDimension(com.cgfay.utilslibrary.R.dimen.dp4));
             }
             cursor.close();
             destroyImageLoader();

@@ -72,8 +72,8 @@ public class CropCoverView extends View {
     }
 
     private void init() {
-        mStrokeWidth = (int) getResources().getDimension(R.dimen.dp3);
-        mStrokeWidthNew = (int) getResources().getDimension(R.dimen.dp1);
+        mStrokeWidth = (int) getResources().getDimension(com.cgfay.utilslibrary.R.dimen.dp3);
+        mStrokeWidthNew = (int) getResources().getDimension(com.cgfay.utilslibrary.R.dimen.dp3);
 
         mPaint = new Paint();
         mPaint.setAntiAlias(true);

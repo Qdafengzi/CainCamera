@@ -70,11 +70,11 @@ public class VideoClipSeekBar extends View {
     private void init(Context context) {
         paintBar = new Paint();
         paintBar.setAntiAlias(true);
-        paintBar.setColor(getResources().getColor(R.color.blue));
+        paintBar.setColor(getResources().getColor(com.cgfay.utilslibrary.R.color.blue));
 
         paintTouchBar = new Paint();
         paintTouchBar.setAntiAlias(true);
-        paintTouchBar.setColor(getResources().getColor(R.color.yellow));
+        paintTouchBar.setColor(getResources().getColor(com.cgfay.utilslibrary.R.color.yellow));
 
         margin = DensityUtils.dp2px(context, 5);
 

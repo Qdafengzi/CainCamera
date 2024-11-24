@@ -65,7 +65,7 @@ public class CombineVideoDialogFragment extends DialogFragment {
         mMessageView = (TextView) view.findViewById(R.id.tv_hint);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             pb_loading.setIndeterminateTintList(
-                    ContextCompat.getColorStateList(getActivity(), R.color.blue));
+                    ContextCompat.getColorStateList(getActivity(), com.cgfay.utilslibrary.R.color.blue));
         }
         mMessageView.setText(message);
         Dialog dialog = builder.create();

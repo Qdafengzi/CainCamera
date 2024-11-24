@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
+
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.WindowManager;
@@ -73,7 +75,7 @@ public class CameraActivity extends AppCompatActivity {
     public void onBackPressed() {
         if (mPreviewFragment == null || !mPreviewFragment.onBackPressed()) {
             super.onBackPressed();
-            overridePendingTransition(0, R.anim.anim_slide_down);
+            overridePendingTransition(0, com.cgfay.utilslibrary.R.anim.anim_slide_down);
         }
     }
 
@@ -82,7 +84,11 @@ public class CameraActivity extends AppCompatActivity {
      */
     private void registerHomeReceiver() {
         IntentFilter homeFilter = new IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
-        registerReceiver(mHomePressReceiver, homeFilter);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            registerReceiver(mHomePressReceiver, homeFilter, Context.RECEIVER_EXPORTED);
+        }else{
+            registerReceiver(mHomePressReceiver, homeFilter);
+        }
     }
 
     /**

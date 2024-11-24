@@ -61,7 +61,6 @@ import com.cgfay.picker.widget.subsamplingview.decoder.ImageDecoder;
 import com.cgfay.picker.widget.subsamplingview.decoder.ImageRegionDecoder;
 import com.cgfay.picker.widget.subsamplingview.decoder.SkiaImageDecoder;
 import com.cgfay.picker.widget.subsamplingview.decoder.SkiaImageRegionDecoder;
-import com.cgfay.scan.BuildConfig;
 import com.cgfay.scan.R;
 
 
@@ -1534,12 +1533,12 @@ public class SubsamplingScaleImageView extends View {
         sampleSize /= 2;
       }
     }
-    if (BuildConfig.DEBUG) {
-      for (Integer sampleSizeKey : tileMap.keySet()) {
-        Log.d(TAG, "[sampleSiz]" + sampleSizeKey + " [tiles]"
-            + tileMap.get(sampleSizeKey).size());
-      }
-    }
+//    if (BuildConfig.DEBUG) {
+//      for (Integer sampleSizeKey : tileMap.keySet()) {
+//        Log.d(TAG, "[sampleSiz]" + sampleSizeKey + " [tiles]"
+//            + tileMap.get(sampleSizeKey).size());
+//      }
+//    }
   }
 
   /**

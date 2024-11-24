@@ -131,7 +131,7 @@ public class PreviewSettingFragment extends Fragment implements View.OnClickList
     private void updateFlashUI() {
         if (mEnableFlash) {
             mImageFlash.setBackgroundResource(R.drawable.ic_camera_flash_on);
-            mTextFlash.setTextColor(getResources().getColor(R.color.white));
+            mTextFlash.setTextColor(getResources().getColor(com.cgfay.utilslibrary.R.color.white));
         } else {
             mImageFlash.setBackgroundResource(R.drawable.ic_camera_flash_off);
             mTextFlash.setTextColor(getResources().getColor(R.color.popup_text_normal));
@@ -155,7 +155,7 @@ public class PreviewSettingFragment extends Fragment implements View.OnClickList
     private void updateTouchTakenUI() {
         if (canTouchTake) {
             mImageTouchTake.setBackgroundResource(R.drawable.ic_camera_setting_more_light);
-            mTextTouchTake.setTextColor(getResources().getColor(R.color.white));
+            mTextTouchTake.setTextColor(getResources().getColor(com.cgfay.utilslibrary.R.color.white));
         } else {
             mImageTouchTake.setBackgroundResource(R.drawable.ic_camera_setting_more_dark);
             mTextTouchTake.setTextColor(getResources().getColor(R.color.popup_text_normal));
@@ -181,7 +181,7 @@ public class PreviewSettingFragment extends Fragment implements View.OnClickList
                 ? R.drawable.ic_camera_setting_more_light
                 : R.drawable.ic_camera_setting_more_dark);
         mTextTimeLapse.setTextColor(mDelayTakePicture
-                ? getResources().getColor(R.color.white)
+                ? getResources().getColor(com.cgfay.utilslibrary.R.color.white)
                 : getResources().getColor(R.color.popup_text_normal));
     }
 

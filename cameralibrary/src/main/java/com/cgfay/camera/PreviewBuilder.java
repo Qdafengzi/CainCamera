@@ -179,7 +179,7 @@ public final class PreviewBuilder {
             fragment.startActivity(intent);
         } else {
             activity.startActivity(intent);
-            activity.overridePendingTransition(R.anim.anim_slide_up, 0);
+            activity.overridePendingTransition(com.cgfay.utilslibrary.R.anim.anim_slide_up, 0);
         }
     }
 }

@@ -5,12 +5,11 @@ def platformVersion = 21    // 18: openGLES 3 min api level
 // def platformVersion = 12    //openGLES 2 min api level
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion '30.0.2'
-
+    compileSdk 34
+    namespace "com.cgfay.media"
     defaultConfig {
-        minSdkVersion "${platformVersion}"
-        targetSdkVersion 30
+        minSdkVersion 24
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
 
@@ -55,8 +54,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 }
 

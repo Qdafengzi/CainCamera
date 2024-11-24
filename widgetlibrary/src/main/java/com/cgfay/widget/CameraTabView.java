@@ -330,73 +330,74 @@ public class CameraTabView extends HorizontalScrollView {
         super.addView(mSlidingTabIndicator, 0, new LayoutParams(
                 LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT));
 
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.TabLayout,
-                defStyleAttr, R.style.Widget_Design_TabLayout);
+
+        TypedArray a = context.obtainStyledAttributes(attrs,com.google.android.material.R.styleable.TabLayout,
+                defStyleAttr, com.google.android.material.R.style.Widget_Design_TabLayout);
 
         mSlidingTabIndicator.setSelectedIndicatorHeight(
-                a.getDimensionPixelSize(R.styleable.TabLayout_tabIndicatorHeight, 0));
-        mSlidingTabIndicator.setSelectedIndicatorColor(a.getColor(R.styleable.TabLayout_tabIndicatorColor, 0));
+                a.getDimensionPixelSize(com.google.android.material.R.styleable.TabLayout_tabIndicatorHeight, 0));
+        mSlidingTabIndicator.setSelectedIndicatorColor(a.getColor(com.google.android.material.R.styleable.TabLayout_tabIndicatorColor, 0));
 
-        setTabIndicatorFullWidth(a.getBoolean(R.styleable.TabLayout_tabIndicatorFullWidth, true));
+        setTabIndicatorFullWidth(a.getBoolean(com.google.android.material.R.styleable.TabLayout_tabIndicatorFullWidth, true));
 
         mTabPaddingStart = mTabPaddingTop = mTabPaddingEnd = mTabPaddingBottom = a
-                .getDimensionPixelSize(R.styleable.TabLayout_tabPadding, 0);
-        mTabPaddingStart = a.getDimensionPixelSize(R.styleable.TabLayout_tabPaddingStart,
+                .getDimensionPixelSize(com.google.android.material.R.styleable.TabLayout_tabPadding, 0);
+        mTabPaddingStart = a.getDimensionPixelSize(com.google.android.material.R.styleable.TabLayout_tabPaddingStart,
                 mTabPaddingStart);
-        mTabPaddingTop = a.getDimensionPixelSize(R.styleable.TabLayout_tabPaddingTop,
+        mTabPaddingTop = a.getDimensionPixelSize(com.google.android.material.R.styleable.TabLayout_tabPaddingTop,
                 mTabPaddingTop);
-        mTabPaddingEnd = a.getDimensionPixelSize(R.styleable.TabLayout_tabPaddingEnd,
+        mTabPaddingEnd = a.getDimensionPixelSize(com.google.android.material.R.styleable.TabLayout_tabPaddingEnd,
                 mTabPaddingEnd);
-        mTabPaddingBottom = a.getDimensionPixelSize(R.styleable.TabLayout_tabPaddingBottom,
+        mTabPaddingBottom = a.getDimensionPixelSize(com.google.android.material.R.styleable.TabLayout_tabPaddingBottom,
                 mTabPaddingBottom);
 
-        mTabTextAppearance = a.getResourceId(R.styleable.TabLayout_tabTextAppearance,
-                R.style.TextAppearance_Design_Tab);
+        mTabTextAppearance = a.getResourceId(com.google.android.material.R.styleable.TabLayout_tabTextAppearance,
+                com.google.android.material.R.style.TextAppearance_Design_Tab);
 
         // Text colors/sizes come from the text appearance first
         final TypedArray ta = context.obtainStyledAttributes(mTabTextAppearance,
-                R.styleable.TextAppearance);
+                com.google.android.material.R.styleable.TextAppearance);
         try {
             mTabTextSize = ta.getDimensionPixelSize(
-                    R.styleable.TextAppearance_android_textSize, 0);
+                    com.google.android.material.R.styleable.TextAppearance_android_textSize, 0);
             mTabTextColors = ta.getColorStateList(
-                    R.styleable.TextAppearance_android_textColor);
+                    com.google.android.material.R.styleable.TextAppearance_android_textColor);
         } finally {
             ta.recycle();
         }
 
-        if (a.hasValue(R.styleable.TabLayout_tabTextColor)) {
+        if (a.hasValue(com.google.android.material.R.styleable.TabLayout_tabTextColor)) {
             // If we have an explicit text color set, use it instead
-            mTabTextColors = a.getColorStateList(R.styleable.TabLayout_tabTextColor);
+            mTabTextColors = a.getColorStateList(com.google.android.material.R.styleable.TabLayout_tabTextColor);
         }
 
-        if (a.hasValue(R.styleable.TabLayout_tabSelectedTextColor)) {
+        if (a.hasValue(com.google.android.material.R.styleable.TabLayout_tabSelectedTextColor)) {
             // We have an explicit selected text color set, so we need to make merge it with the
             // current colors. This is exposed so that developers can use theme attributes to set
             // this (theme attrs in ColorStateLists are Lollipop+)
-            final int selected = a.getColor(R.styleable.TabLayout_tabSelectedTextColor, 0);
+            final int selected = a.getColor(com.google.android.material.R.styleable.TabLayout_tabSelectedTextColor, 0);
             mTabTextColors = createColorStateList(mTabTextColors.getDefaultColor(), selected);
         }
 
-        mTabIconTint = MaterialResources.getColorStateList(context, a, R.styleable.TabLayout_tabIconTint);
-        mTabIconTintMode = ViewUtils.parseTintMode(a.getInt(R.styleable.TabLayout_tabIconTintMode, -1), (android.graphics.PorterDuff.Mode)null);
-        mTabRippleColorStateList = MaterialResources.getColorStateList(context, a, R.styleable.TabLayout_tabRippleColor);
-        mTabIndicatorAnimationDuration = a.getInt(R.styleable.TabLayout_tabIndicatorAnimationDuration, ANIMATION_DURATION);
-        mRequestedTabMinWidth = a.getDimensionPixelSize(R.styleable.TabLayout_tabMinWidth,
+        mTabIconTint = MaterialResources.getColorStateList(context, a, com.google.android.material.R.styleable.TabLayout_tabIconTint);
+        mTabIconTintMode = ViewUtils.parseTintMode(a.getInt(com.google.android.material.R.styleable.TabLayout_tabIconTintMode, -1), (android.graphics.PorterDuff.Mode)null);
+        mTabRippleColorStateList = MaterialResources.getColorStateList(context, a, com.google.android.material.R.styleable.TabLayout_tabRippleColor);
+        mTabIndicatorAnimationDuration = a.getInt(com.google.android.material.R.styleable.TabLayout_tabIndicatorAnimationDuration, ANIMATION_DURATION);
+        mRequestedTabMinWidth = a.getDimensionPixelSize(com.google.android.material.R.styleable.TabLayout_tabMinWidth,
                 INVALID_WIDTH);
-        mRequestedTabMaxWidth = a.getDimensionPixelSize(R.styleable.TabLayout_tabMaxWidth,
+        mRequestedTabMaxWidth = a.getDimensionPixelSize(com.google.android.material.R.styleable.TabLayout_tabMaxWidth,
                 INVALID_WIDTH);
-        mTabBackgroundResId = a.getResourceId(R.styleable.TabLayout_tabBackground, 0);
-        mContentInsetStart = a.getDimensionPixelSize(R.styleable.TabLayout_tabContentStart, 0);
-        mMode = a.getInt(R.styleable.TabLayout_tabMode, MODE_FIXED);
-        mTabGravity = a.getInt(R.styleable.TabLayout_tabGravity, GRAVITY_FILL);
-        mInlineLabel = a.getBoolean(R.styleable.TabLayout_tabInlineLabel, false);
+        mTabBackgroundResId = a.getResourceId(com.google.android.material.R.styleable.TabLayout_tabBackground, 0);
+        mContentInsetStart = a.getDimensionPixelSize(com.google.android.material.R.styleable.TabLayout_tabContentStart, 0);
+        mMode = a.getInt(com.google.android.material.R.styleable.TabLayout_tabMode, MODE_FIXED);
+        mTabGravity = a.getInt(com.google.android.material.R.styleable.TabLayout_tabGravity, GRAVITY_FILL);
+        mInlineLabel = a.getBoolean(com.google.android.material.R.styleable.TabLayout_tabInlineLabel, false);
         a.recycle();
 
         // TODO add attr for these
         final Resources res = getResources();
-        mTabTextMultiLineSize = res.getDimensionPixelSize(R.dimen.design_tab_text_size_2line);
-        mScrollableTabMinWidth = res.getDimensionPixelSize(R.dimen.design_tab_scrollable_min_width);
+        mTabTextMultiLineSize = res.getDimensionPixelSize(com.google.android.material.R.dimen.design_tab_text_size_2line);
+        mScrollableTabMinWidth = res.getDimensionPixelSize(com.google.android.material.R.dimen.design_tab_scrollable_min_width);
 
         // Now apply the tab mode and gravity
         applyModeAndGravity();
@@ -407,7 +408,7 @@ public class CameraTabView extends HorizontalScrollView {
      *
      * @param color color to use for the indicator
      *
-     * @attr ref R.styleable#TabLayout_tabIndicatorColor
+     * @attr ref com.google.android.material.R.styleable#TabLayout_tabIndicatorColor
      */
     public void setSelectedTabIndicatorColor(@ColorInt int color) {
         mSlidingTabIndicator.setSelectedIndicatorColor(color);
@@ -2039,7 +2040,7 @@ public class CameraTabView extends HorizontalScrollView {
                 // If there isn't a custom view, we'll us our own in-built layouts
                 if (mIconView == null) {
                     ImageView iconView = (ImageView) LayoutInflater.from(getContext())
-                            .inflate(R.layout.design_layout_tab_icon, this, false);
+                            .inflate(com.google.android.material.R.layout.design_layout_tab_icon, this, false);
                     addView(iconView, 0);
                     mIconView = iconView;
                 }
@@ -2055,7 +2056,7 @@ public class CameraTabView extends HorizontalScrollView {
 
                 if (mTextView == null) {
                     TextView textView = (TextView) LayoutInflater.from(getContext())
-                            .inflate(R.layout.design_layout_tab_text, this, false);
+                            .inflate(com.google.android.material.R.layout.design_layout_tab_text, this, false);
                     addView(textView);
                     mTextView = textView;
                     mDefaultMaxLines = TextViewCompat.getMaxLines(mTextView);

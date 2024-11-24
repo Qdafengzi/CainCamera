@@ -95,52 +95,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mHandler.postDelayed(()->{
             mOnClick = false;
         }, DELAY_CLICK);
-        switch (v.getId()) {
-            case R.id.btn_camera: {
-                previewCamera();
-                break;
-            }
-
-            case R.id.btn_edit_video: {
-                scanMedia(false,true);
-                break;
-            }
-
-            case R.id.btn_edit_picture: {
-                scanMedia(true, false);
-                break;
-            }
-
-            case R.id.btn_speed_record: {
-                Intent intent = new Intent(MainActivity.this, SpeedRecordActivity.class);
-                startActivity(intent);
-                break;
-            }
-
-            case R.id.btn_edit_music_merge: {
-                musicMerge();
-                break;
-            }
-
-            case R.id.btn_ff_media_record: {
-                ffmpegRecord();
-                break;
-            }
-
-            case R.id.btn_music_player: {
-                musicPlayerTest();
-                break;
-            }
-
-            case R.id.btn_video_player: {
-                videoPlayerTest();
-                break;
-            }
-
-            case R.id.btn_duet_record: {
-                duetRecord();
-                break;
-            }
+        int id = v.getId();
+        if (id == R.id.btn_camera) {
+            previewCamera();
+        } else if (id == R.id.btn_edit_video) {
+            scanMedia(false, true);
+        } else if (id == R.id.btn_edit_picture) {
+            scanMedia(true, false);
+        } else if (id == R.id.btn_speed_record) {
+            Intent intent = new Intent(MainActivity.this, SpeedRecordActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.btn_edit_music_merge) {
+            musicMerge();
+        } else if (id == R.id.btn_ff_media_record) {
+            ffmpegRecord();
+        } else if (id == R.id.btn_music_player) {
+            musicPlayerTest();
+        } else if (id == R.id.btn_video_player) {
+            videoPlayerTest();
+        } else if (id == R.id.btn_duet_record) {
+            duetRecord();
         }
     }
 

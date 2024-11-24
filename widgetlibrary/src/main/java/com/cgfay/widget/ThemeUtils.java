@@ -11,8 +11,9 @@ import com.cgfay.design.R;
  */
 final class ThemeUtils {
 
+
     private static final int[] APPCOMPAT_CHECK_ATTRS = {
-            R.attr.colorPrimary
+            com.google.android.material.R.attr.colorPrimary
     };
 
     static void checkAppCompatTheme(Context context) {

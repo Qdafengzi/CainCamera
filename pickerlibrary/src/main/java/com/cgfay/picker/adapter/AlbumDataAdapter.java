@@ -44,7 +44,8 @@ public class AlbumDataAdapter extends RecyclerView.Adapter<AlbumDataAdapter.Albu
         holder.mAlbumMediaCount.setText(String.valueOf(album.getCount()));
         MediaPickerManager.getInstance().getMediaLoader()
                 .loadThumbnail(holder.itemView.getContext(), holder.mAlbumThumbnail,
-                        album.getCoverUri(), R.color.black, R.color.black);
+
+                        album.getCoverUri(), com.cgfay.utilslibrary.R.color.black, com.cgfay.utilslibrary.R.color.black);
         holder.itemView.setOnClickListener(v -> {
             if (mAlbumSelectedListener != null) {
                 mAlbumSelectedListener.onAlbumSelected(album);

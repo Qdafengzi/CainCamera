@@ -85,7 +85,7 @@ public class RecordCountDownView extends AppCompatTextView {
      * 更新文字的动画
      */
     private void updateTextAnimate() {
-        Animation enterAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.anim_fade_in);
+        Animation enterAnimation = AnimationUtils.loadAnimation(getContext(), com.cgfay.utilslibrary.R.anim.anim_fade_in);
         startAnimation(enterAnimation);
     }
 

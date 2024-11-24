@@ -25,10 +25,10 @@ public class TabItem extends View {
     public TabItem(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.TabItem);
-        mText = typedArray.getText(R.styleable.TabItem_android_text);
-        mIcon = typedArray.getDrawable(R.styleable.TabItem_android_icon);
-        mCustomLayout = typedArray.getResourceId(R.styleable.TabItem_android_layout, 0);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, com.google.android.material.R.styleable.TabItem);
+        mText = typedArray.getText(com.google.android.material.R.styleable.TabItem_android_text);
+        mIcon = typedArray.getDrawable(com.google.android.material.R.styleable.TabItem_android_icon);
+        mCustomLayout = typedArray.getResourceId(com.google.android.material.R.styleable.TabItem_android_layout, 0);
         typedArray.recycle();
     }
 }

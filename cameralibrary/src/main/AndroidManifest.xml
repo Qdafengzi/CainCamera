@@ -4,6 +4,7 @@
 
     <application>
         <activity
+            android:exported="true"
             android:name="com.cgfay.camera.activity.CameraActivity"
             android:theme="@style/NoActionBarTheme"
             android:screenOrientation="portrait"/>

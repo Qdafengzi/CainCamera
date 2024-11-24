@@ -157,7 +157,8 @@ public class GLRecordView extends GLSurfaceView {
     public void showFocusAnimation() {
         if (mFocusAnimator == null) {
             mFocusImageView = new ImageView(getContext());
-            mFocusImageView.setImageResource(R.drawable.video_focus);
+
+            mFocusImageView.setImageResource(com.cgfay.cameralibrary.R.drawable.video_focus);
             mFocusImageView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             mFocusImageView.measure(0, 0);
             mFocusImageView.setX(mTouchX - mFocusImageView.getMeasuredWidth() / 2);

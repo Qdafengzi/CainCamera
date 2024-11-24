@@ -63,7 +63,7 @@ public class PreviewFilterAdapter extends RecyclerView.Adapter<PreviewFilterAdap
         if (position == mSelected) {
             holder.filterPanel.setBackgroundResource(R.drawable.ic_camera_effect_selected);
         } else {
-            holder.filterPanel.setBackgroundColor(mContext.getResources().getColor(R.color.transparent));
+            holder.filterPanel.setBackgroundColor(mContext.getResources().getColor(com.cgfay.utilslibrary.R.color.transparent));
         }
         holder.filterRoot.setOnClickListener(new View.OnClickListener() {
             @Override
